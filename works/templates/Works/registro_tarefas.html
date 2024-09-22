@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Tarefas</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Registro de Tarefas</h1>
+      <button onclick="openModal()" id="new">+ Registrar</button>
+    </div>
+  </div>
+
+  <div class="divTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Responsável</th>
+                <th>Atribuída</th>
+                <th>Hora de Início</th>
+                <th>Hora de Término</th>
+                <th>Intercorrência</th>
+                <th class="acao">Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+  </div>
+  <div class="modal-container" id="modal-container">
+    <div class="modal">
+      <form id="taskForm">
+        <h2>Registro</h2>
+
+        <label for="m-responsavel">Responsável</label>
+        <input id="m-responsavel" type="text" required />
+
+        <label for="m-hora1">Hora de Início</label>
+        <input type="time" id="m-hora1" required />
+
+        <label for="m-hora2">Hora de Término</label>
+        <input type="time" id="m-hora2" required />
+
+        <label for="m-intercorrencia">Intercorrência</label>
+        <input id="m-intercorrencia" type="text" required />
+
+        <label for="m-atribuida">Atribuída
+            <input class="check" type="checkbox" id="m-atribuida">
+        </label>
+
+        <button class="bt" id="btnSalvar" type="submit">Salvar</button>
+      </form>
+    </div>
+  </div>
+
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
