@@ -5,61 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Tarefas</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
-<body>
-  <div class="container">
-    <div class="header">
-      <h1>Registro de Tarefas</h1>
-      <button onclick="openModal()" id="new">+ Registrar</button>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white shadow-md rounded-lg p-6 w-96">
+        <div class="bg-gray-800 text-white p-4 rounded-t-lg">
+            <div class="flex items-center mb-4">
+                <i class="fas fa-arrow-left mr-2 cursor-pointer" id="backButton"></i>
+                <h1 class="text-lg font-semibold">Registrar tarefa</h1>
+            </div>
+            <div class="flex items-center mb-4">
+                <i style="height: 6em;"class="fas fa-calendar-alt text-2xl mr-4"></i>
+                <form>
+                    <div>
+                        <label style="display: block;" for="end-date">Data de início: </label>
+                        <input style="color: black;" id="end-date" type="date" class="border p-2 rounded" />
+                        <input style="color: black;" id="end-time" type="time" name="end-time" class="border p-2 rounded" />
+                    </div>
+                    <div>
+                        <label for="end-date">Data de término: </label>
+                        <input style="color: black;" id="end-date" type="date" class="border p-2 rounded" />
+                        <input style="color: black;" id="end-time" type="time" name="end-time" class="border p-2 rounded" />
+                    </div>
+                </form>
+            </div>
+            <label for="m-Status">Status
+                <input class="check" type="checkbox" id="m-Status">
+            </label>
+        </div>
+        <div class="p-4">
+            <h2 class="text-gray-700 mb-2">Ocorrências</h2>
+            <textarea class="w-full p-2 border rounded h-32" placeholder="Descrição" id="description"></textarea>
+        </div>
+        <div class="p-4">
+            <button class="w-full bg-green-500 text-white py-2 rounded" id="registerButton">Registrar tarefa</button>
+        </div>
     </div>
-  </div>
-
-  <div class="divTable">
-    <table>
-        <thead>
-            <tr>
-                <th>Responsável</th>
-                <th>Atribuída</th>
-                <th>Hora de Início</th>
-                <th>Hora de Término</th>
-                <th>Intercorrência</th>
-                <th class="acao">Excluir</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table>
-  </div>
-  <div class="modal-container" id="modal-container">
-    <div class="modal">
-      <form id="taskForm">
-        <h2>Registro</h2>
-
-        <label for="m-responsavel">Responsável</label>
-        <input id="m-responsavel" type="text" required />
-
-        <label for="m-hora1">Hora de Início</label>
-        <input type="time" id="m-hora1" required />
-
-        <label for="m-hora2">Hora de Término</label>
-        <input type="time" id="m-hora2" required />
-
-        <label for="m-intercorrencia">Intercorrência</label>
-        <input id="m-intercorrencia" type="text" required />
-
-        <label for="m-atribuida">Atribuída
-            <input class="check" type="checkbox" id="m-atribuida">
-        </label>
-
-        <button class="bt" id="btnSalvar" type="submit">Salvar</button>
-      </form>
-    </div>
-  </div>
-
     <script src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
