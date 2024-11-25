@@ -1,15 +1,11 @@
+{% extends"base.html"%}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Tarefas</title>
+{% block title %}Início{% endblock %}
+{% block styles %}
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-</head>
-{% block content %}
 {% endblock %}
+{% block content %}
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="bg-white shadow-md rounded-lg p-6 w-96">
         <div class="bg-gray-800 text-white p-4 rounded-t-lg">
@@ -44,6 +40,7 @@
             <button class="w-full bg-green-500 text-white py-2 rounded" id="registerButton">Registrar tarefa</button>
         </div>
     </div>
-    <script src="{% static 'js/script.js' %}"></script>
-</body>
-</html>
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
