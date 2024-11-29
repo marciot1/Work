@@ -55,8 +55,10 @@ ROOT_URLCONF = 'WorksAdmin.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [
+            BASE_DIR / "templates",  # Global templates directory
+        ],
+        'APP_DIRS': True,  # Look in app directories
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
